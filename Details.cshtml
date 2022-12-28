@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<table class="table table-bordered" align="center">
+    <thead>
+        <tr>
+            <th scope="col">Key</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Organisation Name</th>
+            <td colspan="2">@TempData["empOrgainsationName"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee ID</th>
+            <td>@TempData["empId"]</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Employee Name</th>
+            <td>@TempData["empName"]</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Employee Email</th>
+            <td colspan="2">@TempData["empEmail"]</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Employee Mobile</th>
+            <td colspan="2">@TempData["empMobile"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee Gender</th>
+            <td colspan="2">@TempData["empGender"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee Age</th>
+            <td colspan="2">@TempData["empAge"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee Password</th>
+            <td colspan="2">@TempData["empPassword"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee Joining Date</th>
+            <td colspan="2">@TempData["empJoiningDate"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee Country</th>
+            <td colspan="2">@TempData["empCountry"]</td>
+        </tr>
+        <tr>
+            <th scope="row">Employee Address</th>
+            <td colspan="2">@TempData["empAddress"]</td>
+        </tr>
+    </tbody>
+</table>

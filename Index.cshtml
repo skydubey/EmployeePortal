@@ -1,0 +1,124 @@
+﻿@model PracticeMVC14.Models.Employee
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm())
+{
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start;margin-top:1rem">
+        <h1 style="margin-bottom:2rem" class="display-2">Employee Details</h1>
+
+        <table class="table table-borderless">
+
+            <tr class="">
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpId, "Employee ID", new {@class= "form-label"}) &nbsp; @Html.TextBoxFor(model => model.EmpId, "", new { @class = "form-control" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpId, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpName, "Employee Name", new { @class = "form-label" }) &nbsp; @Html.TextBoxFor(model => model.EmpName, "", new { @class = "form-control" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpName, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpEmail, "Employee Email ID", new { @class = "form-label" }) &nbsp; @Html.TextBoxFor(model => model.EmpEmail, "", new { @class = "form-control" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpEmail, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpMobile, "Employee Mobile", new { @class = "form-label" }) &nbsp; @Html.TextBoxFor(model => model.EmpMobile, "", new { @class = "form-control" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpMobile, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div style="margin:10px" class="form-check form-check-inline">
+                        @*@Html.TextBoxFor(model => model.EmpGender, "", new { @class = "form-control" })*@
+
+                        @Html.LabelFor(model => model.EmpGender, "Employee Gender", new { @class = "form-label" }) <br />
+
+                        @Html.RadioButtonFor(model => model.EmpGender, "Male", new { @class = "form-check-input" })
+                        @Html.Label("EmpGender", "Male", new { @class = "form-check-label" })
+                        <br />
+                        @Html.RadioButtonFor(model => model.EmpGender, "Female", new { @class = "form-check-input", id = "EmpGender1" })
+                        @Html.Label("EmpGender1", "Female", new { @class = "form-check-label" })
+                        <br />
+                        <small>@Html.ValidationMessageFor(model => model.EmpGender, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpAge, "Employee Age", new { @class = "form-label" }) &nbsp; @Html.TextBoxFor(model => model.EmpAge, "", new { @class = "form-control" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpAge, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpPassword, "Employee Password", new { @class = "form-label" }) &nbsp; @Html.EditorFor(model => model.EmpPassword, "", new { htmlattributes = new { @class = "form-control" } })
+                        <small>@Html.ValidationMessageFor(model => model.EmpPassword, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpConfirmPassword, "Confirm Password", new { @class = "form-label" }) &nbsp; @Html.TextBoxFor(model => model.EmpConfirmPassword, "", new { @class = "form-control" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpConfirmPassword, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpOrganisationName, "Oragnisation Name", new { @class = "form-label" }) &nbsp; @Html.TextBoxFor(model => model.EmpOrganisationName, "Aakash Investments", new { @class = "form-control", @Value = "Aakash Investments", @readonly = true })
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpJoiningDate, "Employee Joining Date", new { @class = "form-label" }) &nbsp; @Html.EditorFor(model => model.EmpJoiningDate, "", new { htmlattributes = new { @class = "form-control" } })
+                        <small>@Html.ValidationMessageFor(model => model.EmpJoiningDate, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpCountry, "Employee Country", new { @class = "form-label" }) &nbsp; @Html.DropDownListFor(model => model.EmpCountry, new SelectList(ViewBag.CountryList), "Select Country", new { @class = "form-control form-select" })
+                        <small>@Html.ValidationMessageFor(model => model.EmpCountry, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+                <td>
+                    <div style="margin:10px">
+                        @Html.LabelFor(model => model.EmpAddress, "Employee Address", new { @class = "form-label" }) &nbsp; @Html.EditorFor(model => model.EmpAddress, "", new { htmlattributes = new { @class = "form-control" } })
+                        <small>@Html.ValidationMessageFor(model => model.EmpAddress, "", new { @class = "text-danger" })</small>
+                    </div>
+                </td>
+            </tr>
+
+
+
+        </table>
+
+    </div>
+    <div align="center" style="margin-bottom:2rem">
+        <button type="submit" class="btn btn-primary mx-2">Submit</button>
+        <button type="reset" class="btn btn-primary mx-2">Clear</button>
+    </div>
+
+    @Html.Raw(ViewData["SuccessMessage"])
+    
+
+
+
+
+}
